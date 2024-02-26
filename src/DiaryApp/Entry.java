@@ -16,4 +16,9 @@ public class Entry {
         this.title = title;
         this.body = body;
     }
+
+    public int getId(){
+        return id;
+    }
+
 }

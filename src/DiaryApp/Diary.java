@@ -13,6 +13,8 @@ private String passWord;
 
 private int generateId;
 
+
+
     public Diary(String userName, String passWord) {
         this.userName = userName;
         this.passWord = passWord;
@@ -40,12 +42,24 @@ private int generateId;
 
     }
 
-    public void remove(String title, String body) {
-        generateId--;
+    public Entry findEntryById(int id) {
+        Entry entry = null;
+        for (int check = 0; check < entries.size(); check++) {
+            if (entries.get(check).getId() == id) {
+              entry = entries.get(check) ;
+            }
+
+        }
+
+        return entry;
     }
 
-    public Entry findEntryBfyId(int id) {
-        for(int check=0; check<entries.size(); check++){
-           if(entries.get(check) == id){
-        }
+
+    public void deleteEntry(int id) {
+        Entry entry = findEntryById(id);
+        entries.remove(entry);
+
+    }
+
+
 }

@@ -53,15 +53,16 @@ public class DiaryTest {
         assertFalse(myDiary.isLocked());
     }
 
-//    @Test
-//    public void testThatDiaryCanDeleteEntry(){
-//        Diary myDiary = new Diary("Jumoke", "1234");
-//        myDiary.unLocked();
-//        myDiary.createEntry("Today's Diary", "Today is such a stressful day");
-//        myDiary.createEntry("Today's Diary", "Today is such a stressful day");
-//        myDiary.createEntry("Today's Diary", "Today is such a stressful day");
-//        assertEquals(3, myDiary. ().size());
-//        myDiary.remove("Today's Diary", "Today is such a stressful day");
-//        assertFalse(myDiary.isLocked());
-//    }
+    @Test
+    public void testThatDiaryCanDeleteEntry(){
+        Diary myDiary = new Diary("Jumoke", "1234");
+        myDiary.unLocked();
+        myDiary.createEntry("Today's Diary", "Today is such a stressful day");
+        myDiary.createEntry("Today's Diary", "Today is such a stressful day");
+        myDiary.createEntry("Today's Diary", "Today is such a stressful day");
+        assertEquals(3, myDiary.getEntries().size());
+        myDiary.deleteEntry(1);
+        assertEquals(2, myDiary.getEntries().size());
+        assertFalse(myDiary.isLocked());
+    }
 }
