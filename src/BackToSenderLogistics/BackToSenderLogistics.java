@@ -6,7 +6,7 @@ public class BackToSenderLogistics {
         return 500 * 100;
     }
 
-    public int amountEarned(int packages) {
+    public int calculatePay(int packages) {
         double percentage = ((double) packages / 100) * 100;
         int totalDeliveries = 0;
         if (packages < 0){
