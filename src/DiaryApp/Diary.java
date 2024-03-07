@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 
 public class Diary {
-private boolean isLocked = true;
+private boolean isLocked = false;
 
 private ArrayList<Entry> entries = new ArrayList<Entry>();
 
@@ -25,8 +25,8 @@ private int generateId;
         return isLocked;
     }
 
-    public void unLocked() {
-        isLocked = false;
+    public void unLocked(String passWord) {
+        isLocked = true;
     }
 
     public int generateId(){
@@ -44,9 +44,9 @@ private int generateId;
 
     public Entry findEntryById(int id) {
         Entry entry = null;
-        for (int check = 0; check < entries.size(); check++) {
-            if (entries.get(check).getId() == id) {
-              entry = entries.get(check) ;
+        for (Entry value : entries) {
+            if (value.getId() == id) {
+                entry = value;
             }
 
         }
@@ -62,4 +62,13 @@ private int generateId;
     }
 
 
+    public void updateEntry(int id, String title, String body) {
+        Entry entry = findEntryById(id);
+        entry.setTitle(title);
+        entry.setBody(body);
+    }
+
+    public String getUserName(){
+        return userName;
+    }
 }
