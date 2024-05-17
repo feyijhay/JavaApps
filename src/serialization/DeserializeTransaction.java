@@ -31,17 +31,17 @@ public class DeserializeTransaction {
         return container;
     }
 
-    public static int getTotalNumberOfDigits(String filePath) throws IOException {
-        Path path = Paths.get(filePath);
-        String content = Files.readString(path);
-        Transaction[] digits = deserialize(content);
-
-        int digit = 0;
-
-        for(Transaction digits1: digits){
-            digit = digits1.getNumber();
-        }
-        return digit;
-    }
+//    public static int getTotalNumberOfDigits(String filePath) throws IOException {
+//        Path path = Paths.get(filePath);
+//        String content = Files.readString(path);
+//        Transaction[] digits = deserialize(content);
+//
+//        int digit = 0;
+//
+//        for(Transaction digits1: digits){
+//            digit = digits1.getNumber();
+//        }
+//        return digit;
+//    }
 
 }
