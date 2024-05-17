@@ -86,16 +86,31 @@ public class DiaryTest {
     @Test
     public void testThatWhenYouUnlockDiaryWithIncorrectPassword_ThrowsAnException(){
         Diary myDiary = new Diary("Jumoke", "1234");
-        myDiary.unLocked("1324");
         assertThrows(IncorrectPasswordException.class,()-> myDiary.unLocked("1324"));
-        myDiary.createEntry("Today's Diary", "Today is such a stressful day");
-        myDiary.createEntry("Today's Diary", "Today is such a stressful day");
-        myDiary.createEntry("Today's Diary", "Today is such a stressful day");
-        assertEquals(3, myDiary.getEntries().size());
-        myDiary.updateEntry(2, "Today is Monday", "I hate Mondays!!!");
-        Entry entry = myDiary.findEntryById(2);
-        assertEquals("Today is Monday", entry.getTitle());
-        assertEquals("I hate Mondays!!!", entry.getBody());
-        assertTrue(myDiary.isLocked());
+
+    }
+
+    @Test
+    public void testThatWhenYouCreateDiaryWithNullUsername_ThrowsAnException(){
+        assertThrows(IllegalArgumentException.class,()-> new Diary(null, "1234"));
+
+    }
+
+    @Test
+    public void testThatWhenYouCreateDiaryWithoutUsername_ThrowsAnException(){
+        assertThrows(IllegalArgumentException.class,()-> new Diary("", "1234"));
+
+    }
+
+    @Test
+    public void testThatWhenYouCreateDiaryWithNullPassword_ThrowsAnException(){
+        assertThrows(IllegalArgumentException.class,()-> new Diary("Jumoke", null));
+
+    }
+
+    @Test
+    public void testThatWhenYouCreateDiaryWithoutPassword_ThrowsAnException(){
+        assertThrows(IllegalArgumentException.class,()-> new Diary("Jumoke", ""));
+
     }
 }

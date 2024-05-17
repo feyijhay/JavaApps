@@ -1,4 +1,4 @@
-package Bank;
+package BankApp;
 
 public class MyAccount {
     private int balance;

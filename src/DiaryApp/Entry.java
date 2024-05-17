@@ -18,7 +18,7 @@ public class Entry {
     }
 
     public int getId(){
-        return id;
+        return this.id ;
     }
 
     public void setTitle(String title){
@@ -31,11 +31,13 @@ public class Entry {
     }
 
     public String getTitle(){
-        return title;
+        return this.title;
     }
 
     public String getBody(){
-        return body;
+        return this.body;
     }
 
 }
+
+

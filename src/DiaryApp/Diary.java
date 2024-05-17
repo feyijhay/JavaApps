@@ -16,6 +16,13 @@ private int generateId;
 
 
     public Diary(String userName, String passWord) {
+
+        if (userName == null || userName.isEmpty()){
+            throw new IllegalArgumentException("Enter username");
+        }
+        if (passWord == null || passWord.isEmpty()){
+            throw new IllegalArgumentException("Password should not be left empty");
+        }
         this.userName = userName;
         this.passWord = passWord;
     }
@@ -26,7 +33,11 @@ private int generateId;
     }
 
     public void unLocked(String passWord) {
+        if(!this.passWord.equals(passWord)){
+            throw new IncorrectPasswordException("Enter correct password!");
+        }
         isLocked = true;
+
     }
 
     public int generateId(){

@@ -15,15 +15,11 @@ public class MainApp {
                     Kindly pick any option you would like to perform
                     1.createDiary
                     2.createEntry
-                    3.createPassword
-                    4.findEntry
-                    5.deleteEntry
-                    6.updateEntry
-                    7.exitApp
+                    3.findEntry
+                    4.deleteEntry
+                    5.updateEntry
+                    6.exitApp
                     """;
-//        Scanner input = new Scanner(System.in);
-//        System.out.print();
-//        String choice = input.next();
         print(menu);
         String option = input("Enter your desired option:");
         switch (option) {
@@ -59,38 +55,60 @@ public class MainApp {
     private static void createDiary () {
         String username = input("Enter your username:");
         String password = input("Enter your password");
-        user.addDiary(username, password);
-        print("Entry created successfully!!!");
-        menu();
+        try {
+            user.addDiary(username, password);
+            print("Diary created successfully!!!");
+        } catch (Exception j) {
+            print(j.getMessage());
+        }
+        finally {
+            menu();
+        }
     }
+
 
     private static void createEntry () {
         String username = input("Enter your username:");
         String title = input("Enter title:");
         String body = input("Enter body ");
-        Diary diary = user.findByUsername(username);
-        diary.createEntry(title, body);
-        print("Diary created successfully!!!");
-        menu();
-
+        try {
+            Diary diary = user.findByUsername(username);
+            diary.createEntry(title, body);
+            print("Diary created successfully!!!");
+        }catch (Exception j) {
+            print(j.getMessage());
+        }finally {
+            menu();
+        }
     }
 
     private static void findEntry() {
         String username = input("Enter your username:");
         String id = input("Enter your Diary id:");
-        Diary diary = user.findByUsername(username);
-        diary.findEntryById(Integer.parseInt(id));
-        print("Entry found");
+        try {
+            Diary diary = user.findByUsername(username);
+            diary.findEntryById(Integer.parseInt(id));
+            print("Entry found");
+        }catch (Exception j) {
+            print(j.getMessage());
+        }finally {
+            menu();
+        }
 
     }
 
     private static void deleteEntry() {
         String username = input("Enter your username:");
         String id = input("Enter Id number of the entry you want to delete:");
-        Diary diary = user.findByUsername(username);
-        diary.deleteEntry(Integer.parseInt(id));
-        print("Entry deleted successfully");
-
+        try {
+            Diary diary = user.findByUsername(username);
+            diary.deleteEntry(Integer.parseInt(id));
+            print("Entry deleted successfully");
+        } catch (Exception j) {
+            print(j.getMessage());
+        }finally {
+            menu();
+        }
     }
 
     private static void updateEntry() {
@@ -98,9 +116,15 @@ public class MainApp {
         String id = input("Enter your id:");
         String title = input("Enter title");
         String body = input("Enter body:");
-        Diary diary = user.findByUsername(username);
-        diary.updateEntry(Integer.parseInt(id),title,body);
-        print("Entry updated successfully!");
+        try {
+            Diary diary = user.findByUsername(username);
+            diary.updateEntry(Integer.parseInt(id), title, body);
+            print("Entry updated successfully!");
+        }catch (Exception j) {
+            print(j.getMessage());
+        }finally {
+            menu();
+        }
     }
 
     private static void exitApp() {
