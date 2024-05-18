@@ -1,4 +1,4 @@
-package functionalInterface;
+package functionalinterface2;
 
 import java.util.function.BinaryOperator;
 
@@ -10,6 +10,3 @@ public class BinaryOperatorSample {
 
     }
 }
-//LongUnaryOperator unaryOperator = (number)-> 2 * number;
-//Long result = unaryOperator.applyAsLong(30);
-//System.out.println(result);

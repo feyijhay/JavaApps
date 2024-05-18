@@ -1,8 +1,9 @@
-package functionalInterface.biPredicate;
+package functionalinterface2;
 
 import java.util.function.BiPredicate;
 
 public class BiPredicateSample {
+
     public static void main(String[] args) {
         BiPredicate<String, Integer> biPredicate = (word, number)->{
 
@@ -13,4 +14,3 @@ public class BiPredicateSample {
         System.out.println(answer);
     }
 }
-

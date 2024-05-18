@@ -1,4 +1,4 @@
-package functionalInterface.predicate;
+package functionalinterface2;
 
 import java.util.function.Predicate;
 
@@ -8,7 +8,8 @@ public class PredicateSample {
             return word==10;
 
         };
-        System.out.println(predicate.test(4)); ;
-//        System.out.println(predicate.test("Jummy"));
+       System.out.println(predicate.test(4));
     }
+
+
 }
