@@ -13,6 +13,10 @@ public class Transaction {
         this.number = number;
     }
 
+    public Transaction(){
+
+    }
+
     public int getAmount(){
         return amount;
     }
@@ -76,4 +80,6 @@ public class Transaction {
                 ", date=" + date +
                 '}';
     }
+
+
 }

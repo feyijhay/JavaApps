@@ -8,7 +8,7 @@ public class Example5 {
 
         List<Integer> result = numbers.stream()
                 .sorted()
-                .distinct()
+//                .distinct()
                 .toList();
 
         System.out.println(result);
